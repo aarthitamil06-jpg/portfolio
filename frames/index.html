@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Aarthi M | Resume Portfolio</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family: "Segoe UI", Arial, sans-serif;
+}
+
+body{
+  background:#0b0f14;
+  color:#eaeaea;
+  overflow-x:hidden;
+}
+
+/* ===== Background Animation ===== */
+canvas{
+  position:fixed;
+  inset:0;
+  z-index:-2;
+  opacity:0.28;
+}
+
+/* ===== Watermark Resume Text ===== */
+.watermark{
+  position:fixed;
+  inset:0;
+  z-index:-1;
+  pointer-events:none;
+  display:flex;
+  flex-wrap:wrap;
+  gap:40px;
+  padding:40px;
+  color:rgba(255,255,255,0.04);
+  font-size:14px;
+  line-height:1.6;
+}
+
+/* ===== Main Resume Container ===== */
+.container{
+  max-width:900px;
+  margin:80px auto;
+  padding:60px 40px;
+  background:rgba(15,20,30,0.78);
+  backdrop-filter:blur(8px);
+  border-radius:14px;
+  box-shadow:0 0 35px rgba(0,0,0,0.6);
+}
+
+header h1{
+  font-size:36px;
+  letter-spacing:1px;
+}
+
+.subtitle{
+  color:#9aa4b2;
+  margin:8px 0 22px;
+}
+
+.info{
+  display:flex;
+  flex-wrap:wrap;
+  gap:20px;
+  font-size:14px;
+  color:#b8c0cc;
+}
+
+section{
+  margin-top:35px;
+}
+
+h2{
+  font-size:22px;
+  color:#4da6ff;
+  border-bottom:1px solid #2a3344;
+  padding-bottom:6px;
+  margin-bottom:14px;
+}
+
+p,li{
+  font-size:15px;
+  line-height:1.7;
+}
+
+ul{
+  padding-left:20px;
+}
+
+.badge{
+  display:inline-block;
+  background:#1b2331;
+  padding:6px 14px;
+  border-radius:18px;
+  margin:6px 8px 0 0;
+  font-size:13px;
+}
+
+footer{
+  text-align:center;
+  margin-top:60px;
+  font-size:13px;
+  color:#7d8694;
+}
+</style>
+</head>
+
+<body>
+
+<!-- Background animation -->
+<canvas id="bgCanvas"></canvas>
+
+<!-- Watermark resume content -->
+<div class="watermark">
+  <div>
+    AARTHI M · Aspiring Data Analyst · SQL · MS Excel · Python · C Programming ·
+    Government College of Engineering Tirunelveli · CGPA 8.133 ·
+    Image Processing Based Fire Detection · Smart Garbage Management System ·
+    IPCS Global Embedded & IoT Internship
+  </div>
+  <div>
+    AARTHI M · Tuticorin District Tamil Nadu · Data Analysis · SQL · Excel · Python ·
+    Arduino Projects · Embedded Systems · IoT · Languages English Tamil
+  </div>
+  <div>
+    AARTHI M · Aspiring Data Analyst · SQL · MS Excel · Python · C Programming ·
+    Government College of Engineering Tirunelveli · CGPA 8.133
+  </div>
+</div>
+
+<!-- Main Resume -->
+<div class="container">
+
+<header>
+  <h1>AARTHI M</h1>
+  <div class="subtitle">Aspiring Data Analyst</div>
+  <div class="info">
+    <div>📞 7418386036</div>
+    <div>📧 aarthitamil06@gmail.com</div>
+    <div>📍 Tuticorin District, Tamil Nadu</div>
+  </div>
+</header>
+
+<section>
+  <h2>Career Objective</h2>
+  <p>
+    Aspiring Data Analyst seeking an entry-level role to apply strong analytical skills,
+    SQL, and MS Excel knowledge to interpret data, generate insights, and support
+    data-driven decision-making while continuously enhancing technical and professional skills.
+  </p>
+</section>
+
+<section>
+  <h2>Skills</h2>
+  <span class="badge">SQL</span>
+  <span class="badge">MS Excel</span>
+  <span class="badge">Python</span>
+  <span class="badge">C Programming</span>
+</section>
+
+<section>
+  <h2>Education</h2>
+  <p><strong>B.E – Electronics and Communication Engineering</strong></p>
+  <p>Government College of Engineering, Tirunelveli</p>
+  <p>CGPA: 8.133 / 10 (2022 – 2026)</p>
+  <br>
+  <p><strong>Higher Secondary</strong> – Child Jesus HSS – 90.3%</p>
+  <p><strong>High School</strong> – Child Jesus HSS – 91.2%</p>
+</section>
+
+<section>
+  <h2>Projects</h2>
+  <ul>
+    <li>
+      <strong>Image Processing Based Fire Detection</strong><br>
+      Implemented an alert system using Arduino UNO and buzzer for real-time fire detection.
+    </li>
+    <li>
+      <strong>Smart Garbage Management System</strong><br>
+      Designed a smart solution for efficient waste monitoring and management.
+    </li>
+  </ul>
+</section>
+
+<section>
+  <h2>Internship / Training</h2>
+  <p><strong>IPCS Global – 1 Month</strong></p>
+  <p>
+    Practical exposure to Embedded Systems and IoT solutions including system
+    design and implementation.
+  </p>
+</section>
+
+<section>
+  <h2>Languages</h2>
+  <span class="badge">English</span>
+  <span class="badge">Tamil</span>
+</section>
+
+<footer>
+  © 2026 Aarthi M | Resume Portfolio
+</footer>
+
+</div>
+
+<script>
+const canvas = document.getElementById("bgCanvas");
+const ctx = canvas.getContext("2d");
+const totalFrames = 240;
+const images = [];
+
+function resize(){
+  canvas.width = innerWidth;
+  canvas.height = innerHeight;
+  render();
+}
+addEventListener("resize", resize);
+
+for(let i=1;i<=totalFrames;i++){
+  const img = new Image();
+  img.src = `frames/ezgif-frame-${String(i).padStart(3, "0")}.jpg`;
+  images.push(img);
+}
+
+function render(){
+  const scrollTop = document.documentElement.scrollTop;
+  const maxScroll = document.documentElement.scrollHeight - innerHeight;
+  const index = Math.min(
+    totalFrames-1,
+    Math.floor((scrollTop/maxScroll)*totalFrames)
+  );
+
+  ctx.clearRect(0,0,canvas.width,canvas.height);
+  const img = images[index];
+  if(img && img.complete){
+    ctx.drawImage(img,0,0,canvas.width,canvas.height);
+  }
+}
+
+addEventListener("scroll", render);
+resize();
+</script>
+
+</body>
+</html>
