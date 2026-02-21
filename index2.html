@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Aarthi M | Resume Portfolio</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family: "Segoe UI", Arial, sans-serif;
+}
+
+body{
+  background:#0a0f16;
+  color:#eaf2ff;
+  overflow-x:hidden;
+}
+
+/* ================= BACKGROUND ANIMATION ================= */
+canvas{
+  position:fixed;
+  inset:0;
+  z-index:-3;
+  opacity:0.35;
+}
+
+/* ================= PAGE WRAPPER ================= */
+.wrapper{
+  max-width:1000px;
+  margin:100px auto;
+  padding:0 20px;
+}
+
+/* ================= GLASS CARD ================= */
+.card{
+  position:relative;
+  margin-bottom:60px;
+  padding:40px 45px;
+  border-radius:16px;
+
+  background:rgba(255,255,255,0.08);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+
+  border:1px solid rgba(255,255,255,0.18);
+  box-shadow:0 20px 40px rgba(0,0,0,0.45);
+}
+
+/* ================= WATERMARK TEXT ================= */
+.card::before{
+  content: attr(data-watermark);
+  position:absolute;
+  inset:0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  font-size:46px;
+  font-weight:700;
+  letter-spacing:6px;
+  color:rgba(255,255,255,0.06);
+  transform:rotate(-18deg);
+  pointer-events:none;
+}
+
+/* ================= HEADINGS ================= */
+.section-title{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  font-size:22px;
+  font-weight:600;
+  color:#4fd1ff;
+  margin-bottom:18px;
+}
+
+.section-title span{
+  width:4px;
+  height:22px;
+  background:#4fd1ff;
+  border-radius:4px;
+}
+
+h1{
+  font-size:36px;
+  margin-bottom:10px;
+}
+
+.subtitle{
+  color:#b3c6ff;
+  margin-bottom:18px;
+}
+
+/* ================= TEXT ================= */
+p, li{
+  font-size:15px;
+  line-height:1.7;
+  color:#e6eeff;
+}
+
+ul{
+  padding-left:20px;
+}
+
+.info{
+  display:flex;
+  flex-wrap:wrap;
+  gap:20px;
+  font-size:14px;
+  color:#cbd9ff;
+}
+
+.badge{
+  display:inline-block;
+  padding:6px 14px;
+  border-radius:16px;
+  background:rgba(79,209,255,0.18);
+  margin:6px 8px 0 0;
+  font-size:13px;
+}
+
+footer{
+  text-align:center;
+  margin:80px 0 40px;
+  font-size:13px;
+  color:#9fb2ff;
+}
+</style>
+</head>
+
+<body>
+
+<canvas id="bgCanvas"></canvas>
+
+<div class="wrapper">
+
+<!-- ================= HEADER ================= -->
+<div class="card" data-watermark="AARTHI M">
+  <h1>AARTHI M</h1>
+  <div class="subtitle">Aspiring Data Analyst</div>
+  <div class="info">
+    <div>📞 7418386036</div>
+    <div>📧 aarthitamil06@gmail.com</div>
+    <div>📍 Tuticorin District, Tamil Nadu</div>
+  </div>
+</div>
+
+<!-- ================= CAREER OBJECTIVE ================= -->
+<div class="card" data-watermark="OBJECTIVE">
+  <div class="section-title"><span></span>Career Objective</div>
+  <p>
+    Aspiring Data Analyst seeking an entry-level role to apply strong analytical skills,
+    SQL, and MS Excel knowledge to interpret data, generate insights, and support
+    data-driven decision-making while continuously enhancing technical and professional skills.
+  </p>
+</div>
+
+<!-- ================= SKILLS ================= -->
+<div class="card" data-watermark="SKILLS">
+  <div class="section-title"><span></span>Skills</div>
+  <span class="badge">SQL</span>
+  <span class="badge">MS Excel</span>
+  <span class="badge">Python</span>
+  <span class="badge">C Programming</span>
+</div>
+
+<!-- ================= EDUCATION ================= -->
+<div class="card" data-watermark="EDUCATION">
+  <div class="section-title"><span></span>Education</div>
+  <p><strong>B.E – Electronics and Communication Engineering</strong></p>
+  <p>Government College of Engineering, Tirunelveli</p>
+  <p>CGPA: 8.133 / 10 (2022 – 2026)</p>
+  <br>
+  <p><strong>Higher Secondary</strong> – Child Jesus HSS – 90.3%</p>
+  <p><strong>High School</strong> – Child Jesus HSS – 91.2%</p>
+</div>
+
+<!-- ================= PROJECTS ================= -->
+<div class="card" data-watermark="PROJECTS">
+  <div class="section-title"><span></span>Technical Projects</div>
+  <ul>
+    <li>
+      <strong>Image Processing Based Fire Detection</strong><br>
+      Implemented an alert system using Arduino UNO and buzzer for real-time fire detection.
+    </li>
+    <li>
+      <strong>Smart Garbage Management System</strong><br>
+      Designed a smart solution for efficient waste monitoring and management.
+    </li>
+  </ul>
+</div>
+
+<!-- ================= INTERNSHIP ================= -->
+<div class="card" data-watermark="INTERNSHIP">
+  <div class="section-title"><span></span>Internship / Training</div>
+  <p><strong>IPCS Global – 1 Month</strong></p>
+  <p>
+    Gained practical experience in Embedded Systems and Internet of Things (IoT)
+    solutions including system design and implementation.
+  </p>
+</div>
+
+<!-- ================= LANGUAGES ================= -->
+<div class="card" data-watermark="LANGUAGES">
+  <div class="section-title"><span></span>Languages</div>
+  <span class="badge">English</span>
+  <span class="badge">Tamil</span>
+</div>
+
+<footer>
+  © 2026 Aarthi M | Resume Portfolio
+</footer>
+
+</div>
+
+<script>
+const canvas = document.getElementById("bgCanvas");
+const ctx = canvas.getContext("2d");
+const totalFrames = 240;
+const images = [];
+
+function resize(){
+  canvas.width = innerWidth;
+  canvas.height = innerHeight;
+  render();
+}
+addEventListener("resize", resize);
+
+for(let i=1;i<=totalFrames;i++){
+  const img = new Image();
+  img.src = `frames/ezgif-frame-${String(i).padStart(3, "0")}.jpg`;
+  images.push(img);
+}
+
+function render(){
+  const scrollTop = document.documentElement.scrollTop;
+  const maxScroll = document.documentElement.scrollHeight - innerHeight;
+  const index = Math.min(
+    totalFrames - 1,
+    Math.floor((scrollTop / maxScroll) * totalFrames)
+  );
+
+  ctx.clearRect(0,0,canvas.width,canvas.height);
+  const img = images[index];
+  if(img && img.complete){
+    ctx.drawImage(img,0,0,canvas.width,canvas.height);
+  }
+}
+
+addEventListener("scroll", render);
+resize();
+</script>
+
+</body>
+</html>
